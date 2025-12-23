@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="InnoFix IT - Services Informatiques">
+    <title>InnoFix IT</title>
+    <link rel="stylesheet" href="innofix.css">
+    <script src="innofix.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="innofix_logo.png" alt="InnoFix IT">
+            </a>
+
+            <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a onclick="toggleChat()">Assistant</a></li>
+                    <li><a href="#about">A propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a onclick="openModal()" class="btn-cta">Besoin d'aide ?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="overlay"></div>
+    <section id="presentation">
+        <h1 class="fade-in">Bienvenue chez InnoFix IT</h1>
+        <p class="fade-in">Nous sommes une équipe de techniciens passionnés,
+            spécialisés dans l'assemblage, la réparation et la configuration de systèmes informatiques.
+            Que vous soyez un particulier ou une entreprise, nous avons la solution adaptée.
+            Notre mission est de vous offrir des solutions fiables, rapides et abordables.</p>
+        <a onclick="openModal()" class="btn fade-in">Besoin d'aide ?</a>
+    </section>
+
+    <section id="services">
+        <h2 class="fade-in">Nos Services</h2>
+        <p class="fade-in">
+            Assemblage et maintenance de postes informatiques <br>
+            Installation & Activation Windows <br>
+            Réparation de composants et dépannage logiciel <br>
+            Installation, configuration sécurisation de réseaux locaux <br>
+            Mise en place de câblage structuré et optimisation de la connectivité <br>
+            Conseils en cybersécurité et sauvegarde de données<br>
+        </p>
+        <a href="#contact" class="btn fade-in">Contactez-nous</a>
+    </section>
+
+    <section id="about">
+        <h2 class="fade-in">A propos de InnoFix IT</h2>
+        <p class="fade-in">
+            InnoFix IT est né d'une passion pour l'informatique et le désir d'aider particuliers et entreprises
+            à mieux gérer leurs systèmes. Depuis notre création,
+            nous avons accompagné des dizaines de clients
+            dans la mise en place, l'entretien et la réparation de leurs équipements technologiques.
+            <br><br>
+            Notre valeur ajoutée : l'écoute, l'expertise
+            et des solutions adaptées à chaque budget.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2 class="fade-in">Contactez InnoFix IT</h2>
+        <p class="fade-in">
+            Port-au-Prince, Haïti <br>
+            +(509) 3323-3468 / +(509) 3725-2162 <br>
+            info.innofixit@gmail.com <br><br>
+            Vous avez un problème informatique ou un projet en tête ?
+            Parlez-en avec votre assistant virtuel dès maintenant</p>
+        <a onclick="toggleChat()" class="btn fade-in">Discutez avec le bot</a>
+    </section>
+
+    <button class="chatbot-button" onclick="toggleChat()">IT</button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">InnoBot</div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot">Bonjour! Je suis InnoBot. Comment puis-je vous aider ?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="userInput" placeholder="Ecrivez votre message...">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h3>Demande d'assistance</h3>
+            <form action="https://formspree.io/f/mwpngwvl" method="post">
+                <label>Nom complet:</label>
+                <input type="text" placeholder="Votre nom" required>
+                <label>Email :</label>
+                <input type="email" placeholder="Votre email" required>
+                <label>Téléphone :</label>
+                <input type="tel" placeholder="Votre numéro de téléphone" required>
+                <label>Type de besoin :</label>
+                <select required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="assemblage">Assemblage PC</option>
+                    <option value="reparation">Réparation</option>
+                    <option value="reseau">Configuration réseau</option>
+                    <option value="cablage">Câblage structuré</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <label>Description :</label>
+                <textarea rows="5" placeholder="Décrivez votre problème ou besoin" required></textarea>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 InnoFix IT. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
