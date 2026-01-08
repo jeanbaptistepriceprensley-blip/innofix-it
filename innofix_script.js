@@ -48,7 +48,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
             const userMsg = document.createElement("div");
             userMsg.classList = "message user";
-            userMsg.innerText = "input.value";
+            userMsg.innerText = input.value;
             messages.appendChild(userMsg);
 
             freeMessages--;
@@ -82,4 +82,5 @@ document.querySelectorAll('nav a').forEach(anchor => {
         function closeModal() {
             document.getElementById("helpModal").style.display = "none";
         }
+
 
